@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import RosterHeadings from '../Components/RosterHeadings';
 
 const JrDucksPlayers = () => {
   const [players, setPlayers] = useState('');
@@ -17,11 +18,24 @@ const JrDucksPlayers = () => {
   }, []);
 
   return (
-    <div>
-      <h1>{players.name}</h1>
-      <h2>{players.team}</h2>
-      <h2>{players.birthDate}</h2>
-      <h2>{players.position}</h2>
+    <div className='profile__background'>
+      <div className='profile__container'>
+        <h1 className='profile__header'>Roster</h1>
+        <RosterHeadings />
+        <div className='profile'>
+          <img
+            src={players?.[1]?.img}
+            alt='profile pic'
+            className='profile__pic'
+          />
+          <div className='profile__player-data'>
+            <h2 className='profile__name'>{players?.[1]?.name}</h2>
+            <h3 className='profile__team'>{players?.[1]?.team}</h3>
+            <p className='profile__birthdate'>{players?.[1]?.birthDate}</p>
+            <p className='profile__position'>{players?.[1]?.position}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
