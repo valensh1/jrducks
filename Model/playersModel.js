@@ -2,21 +2,31 @@ const mongoose = require('mongoose');
 
 //? SETTING UP mongoDB SCHEMA
 const playerSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  birthDate: Date,
-  position: {
-    type: String,
-    required: true,
-    enum: ['Forward', 'Defenseman', 'Goalie', 'Coach', 'Assistant Coach'],
-  },
   img: {
     // data: Buffer,
     // contentType: String,
     type: String,
     required: false,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  number: {
+    type: Number,
+    required: true,
+  },
+  position: {
+    type: String,
+    required: true,
+    enum: ['Forward', 'Defenseman', 'Goalie', 'Coach', 'Assistant Coach'],
+  },
+  height: String,
+  weight: String,
+  born: Date,
+  birthplace: {
+    type: String,
+    required: true,
   },
   team: {
     type: String,
@@ -97,32 +107,21 @@ const playerSchema = new mongoose.Schema({
 //? TELLING MONGOOSE YOU WANT TO CREATE A MODEL USING OUR SCHEMA
 const Player = mongoose.model('Player', playerSchema); // Player is our model name and it MUST BE SINGULAR WITH AN UPPERCASE FIRST LETTER! mongoDB will then lowercase this model name and make it plural so it will change the name to ---> players
 
-/*
-const player1 = new Player({
-  name: 'Hunter Valentine',
-  birthDate: '09-06-2010',
-  position: 'Goalie',
-  img: 'https://www.ocregister.com/wp-content/uploads/2019/12/Golden-Knights-Ducks-Hockey-5-5.jpg',
-  team: 'Jr. Ducks',
-  division: 'PeeWee',
-  level: 'A',
-  location: 'Great Park',
-});
-
-player1.save();
-*/
-
-// const player2 = new Player({
+// const player1 = new Player({
+//   img: 'https://i.imgur.com/7yK4jS3.jpg',
 //   name: 'Hunter Valentine',
-//   birthDate: '09-06-2010',
+//   number: 36,
 //   position: 'Goalie',
-//   img: 'https://photos.google.com/photo/AF1QipOixj2KG3jk0LJn30c6Xx4IVuNPlzzkLcdNTw6x',
+//   height: `4'6"`,
+//   weight: 71,
+//   born: '09-06-2010',
+//   birthplace: 'Orange, CA',
 //   team: 'Jr. Ducks',
 //   division: 'PeeWee',
 //   level: 'A',
 //   location: 'Great Park',
 // });
 
-// player2.save();
+// player1.save();
 
 module.exports = Player;

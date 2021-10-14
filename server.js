@@ -1,5 +1,5 @@
 require('dotenv').config();
-const Players = require('./Model/players.js'); //!Importing players model into backend for now to serve front-end React
+const Players = require('./Model/playersModel.js'); //!Importing players model into backend for now to serve front-end React
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || '5000';

@@ -1,10 +1,10 @@
-import JrDucksPlayers from './Views/JrDucksPlayers.js';
-import './Sass/App.scss';
+import Rosters from "./Views/Rosters.js";
+import "./Sass/App.scss";
 
 function App() {
   return (
-    <div className='App'>
-      <JrDucksPlayers />
+    <div className="App">
+      <Rosters />
     </div>
   );
 }

@@ -11,11 +11,18 @@ html {
   font-size: 62.5%; /* Everything is based upon 10px with this. 10px / 16px = .625. With this 1rem will = 10px. */
 }
 
+body {
+  background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Anaheim_Ducks.svg/1200px-Anaheim_Ducks.svg.png");
+}
+
 .profile__background {
-  background-color: black;
+  margin-top: 10rem;
+  margin-left: 17%;
   height: 100vh;
-  width: 100vw;
-  background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Anaheim_Ducks.svg/1200px-Anaheim_Ducks.svg.png');
+  width: 70%;
+  background-color: white;
+  border: 3px solid orangered;
+  z-index: 1;
 }
 
 .profile__container {
@@ -26,31 +33,6 @@ html {
   .profile__header {
     color: orangered;
     font-size: 5rem;
-  }
-  .profile__heading {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: space-between;
-    background-color: black;
-    color: white;
-    border: 5px solid orangered;
-  }
-
-  .profile {
-    display: flex;
-
-    &__pic {
-      margin-top: 1.5rem;
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-    }
-    &__player-data {
-      margin-top: 3rem;
-      margin-left: 1.5rem;
-      line-height: 2.5rem;
-
-      border: 13px solid green;
-    }
+    text-align: center;
   }
 }
