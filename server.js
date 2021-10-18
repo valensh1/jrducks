@@ -15,7 +15,8 @@ mongoose.connect(MONGODB_URI, {
 db.on('open', () => {
   console.log('Mongo is Connected');
 });
-/* Middleware */
+
+//? MIDDLEWARE
 app.use(express.json());
 if (process.env.NODE_ENV !== 'development') {
   app.use(express.static('public'));
@@ -26,6 +27,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true })); // Middleware - so we can use req.body otherwise Express can't read what's in the body of our POST request. This Middleware parses data from forms in the x-www-form-urlencoded format
 app.use(express.json()); // Middleware - for parsing data coming in the body of the POST request as json format
 
+//? GET REQUEST - INDEX ROUTE - SHOW ALL PLAYERS UPON HITTING THIS ROUTE
 app.get('/players', async (req, res) => {
   try {
     const roster = await Players.find({});
@@ -35,8 +37,23 @@ app.get('/players', async (req, res) => {
   }
 });
 
-app.get('/teams', (req, res) => {
-  res.json({ message: 'Hello from server!!!' });
+//? POST REQUEST - CREATE ROUTE - POST NEW PLAYER DATA TO MONGODB FROM NEW PLAYER FORM ON NewPlayer.js file
+app.post('/players', async (req, res) => {
+  try {
+    console.log(req.body);
+    await Players.create(req.body);
+    res.status(200).json(req.body);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+app.get('/teams', async (req, res) => {
+  try {
+    await res.json({ message: 'Hello from server!!!' });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 app.get('*', (req, res) => {

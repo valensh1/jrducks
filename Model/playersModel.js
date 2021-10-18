@@ -8,7 +8,11 @@ const playerSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  name: {
+  firstName: {
+    type: String,
+    required: true,
+  },
+  lastName: {
     type: String,
     required: true,
   },
@@ -22,7 +26,7 @@ const playerSchema = new mongoose.Schema({
     enum: ['Forward', 'Defenseman', 'Goalie', 'Coach', 'Assistant Coach'],
   },
   height: String,
-  weight: String,
+  weight: Number,
   born: Date,
   birthplace: {
     type: String,

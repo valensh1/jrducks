@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Anaheim_Ducks.svg/1200px-Anaheim_Ducks.svg.png");
+  // background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Anaheim_Ducks.svg/1200px-Anaheim_Ducks.svg.png");
 }
 
 .profile__background {
@@ -35,4 +35,8 @@ body {
     font-size: 5rem;
     text-align: center;
   }
+}
+
+#team {
+  background-color: orangered;
 }
