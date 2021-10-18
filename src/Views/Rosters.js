@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PlayerRoster from '../Components/playerRosterTable.js';
 
 const JrDucksPlayers = () => {
@@ -23,6 +24,9 @@ const JrDucksPlayers = () => {
         <h1 className="profile__header">Roster</h1>
         <PlayerRoster players={players} />
       </div>
+      <button type="button" className="btn btn-danger profile__button-new">
+        <Link to="/players/new">New Player</Link>
+      </button>
     </div>
   );
 };
