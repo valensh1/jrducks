@@ -25,7 +25,7 @@ const playerSchema = new mongoose.Schema({
     required: true,
     enum: ['Forward', 'Defenseman', 'Goalie', 'Coach', 'Assistant Coach'],
   },
-  height: String,
+  height: Number,
   weight: Number,
   born: Date,
   birthplace: {

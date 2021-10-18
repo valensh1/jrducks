@@ -67,158 +67,189 @@ const NewPlayer = () => {
     <form action="/players" className="form" method="POST">
       <h1 className="form__heading">NEW PLAYER</h1>
       <div className="form__name">
-        <div className="form__first col-sm-4">
+        <div className="form__first form__container col-sm-4">
           <label className="form__label" htmlFor="firstName">
             First
           </label>
           <input type="text" className="form__input" name="firstName" />
         </div>
 
-        <div className="form__last col-sm-4">
-          <label htmlFor="lastName">Last</label>
+        <div className="form__last form__container col-sm-4 ">
+          <label htmlFor="lastName" className="form__label">
+            Last
+          </label>
           <input type="text" className="form__input" name="lastName" />
         </div>
       </div>
-      <div className="form__number col-sm-1 mt-5">
-        <label htmlFor="number">Jersey #</label>
+      <div className="form__number form__container col-sm-1 mt-5">
+        <label htmlFor="number" className="form__label">
+          Jersey #
+        </label>
         <input type="number" className="form__input" name="number" />
       </div>
 
-      <div className="position__check mt-5 mb-5">
-        <div className="position__check-heading">
-          <h3>Position</h3>
-        </div>
+      <div className="position__check form__container mt-5 mb-2">
+        <h3 className="position__heading">Position</h3>
+
         <div className="position__check-selections">
-          <div className="form-check">
-            <label className="form-check-label" htmlFor="flexCheckDefault">
+          <div className="form-check ">
+            <label className="form-check-label form__label" htmlFor="position">
               Forward
             </label>
             <input
-              className="form-check-input"
+              className="form-check-input form__input"
               type="checkbox"
               value="Forward"
-              id="flexCheckDefault"
               name="position"
             />
           </div>
-          <div className="form-check">
-            <label className="form-check-label" htmlFor="flexCheckChecked">
+
+          <div className="form-check ">
+            <label className="form-check-label form__label" htmlFor="position">
               Defenseman
             </label>
             <input
-              className="form-check-input"
+              className="form-check-input form__input"
               type="checkbox"
               value="Defenseman"
-              id="flexCheckChecked"
               name="position"
             />
           </div>
-          <div className="form-check" id="goalie">
-            <label className="form-check-label" htmlFor="flexCheckChecked">
+
+          <div className="form-check ">
+            <label className="form-check-label form__label" htmlFor="position">
               Goalie
             </label>
             <input
-              className="form-check-input"
+              className="form-check-input form__input"
               type="checkbox"
               value="Goalie"
-              id="flexCheckChecked"
               name="position"
             />
           </div>
-          <div className="form-check">
-            <label className="form-check-label" htmlFor="flexCheckChecked">
+
+          <div className="form-check ">
+            <label className="form-check-label form__label" htmlFor="position">
               Coach
             </label>
             <input
-              className="form-check-input"
+              className="form-check-input form__input"
               type="checkbox"
               value="Coach"
-              id="flexCheckChecked"
               name="position"
             />
           </div>
-          <div className="form-check mb-5">
-            <label className="form-check-label" htmlFor="flexCheckChecked">
+
+          <div className="form-check  mb-5">
+            <label className="form-check-label form__label" htmlFor="position">
               Assistant Coach
             </label>
             <input
-              className="form-check-input"
+              className="form-check-input form__input"
               type="checkbox"
               value="Assistant Coach"
-              id="flexCheckChecked"
               name="position"
             />
           </div>
         </div>
       </div>
-      <input
-        type="text"
-        placeholder="Height in Inches"
-        id="form-height"
-        className="form__height"
-      />
 
-      <input
-        type="number"
-        placeholder="Weight in lbs."
-        id="form-weight"
-        className="form__weight"
-        name="weight"
-      />
+      <div className="form__height-weight">
+        <div className="form__container">
+          <label htmlFor="height" className="form__label">
+            Height (inches)
+          </label>
+          <input
+            type="number"
+            className="form__height form__input col-8"
+            name="height"
+          />
+        </div>
 
-      <input
-        type="text"
-        placeholder="xx/xx/xxxx"
-        id="form-born"
-        className="form__born"
-        name="born"
-      />
-
-      <input
-        type="text"
-        placeholder="Birthplace - City, State"
-        id="form-birthplace"
-        className="form__birthplace"
-        name="birthplace"
-      />
-
-      <div>
-        <select name="team" id="team">
-          <option value="select-team">Select Team</option>
-          {teams.map(team => {
-            return (
-              <option key={team} value={team}>
-                {team}
-              </option>
-            );
-          })}
-        </select>
+        <div className="form__container">
+          <label htmlFor="weight" className="form__label">
+            Weight (lbs.)
+          </label>
+          <input
+            type="number"
+            className="form__weight form__input col-8"
+            id="form-weight"
+            name="weight"
+          />
+        </div>
+      </div>
+      <div className="form__born-birthplace mt-5">
+        <div className="form__container form__born col-5">
+          <label className="form__label" htmlFor="born">
+            DOB
+          </label>
+          <input
+            type="text"
+            placeholder="xx/xx/xxxx"
+            className="form__input"
+            name="born"
+          />
+        </div>
+        <div className="form__container form__birthplace col-5">
+          <label className="form__label" htmlFor="birthplace">
+            Birth Place
+          </label>
+          <input
+            type="text"
+            placeholder="City, State"
+            className="form__birthplace form__input"
+            name="birthplace"
+          />
+        </div>
       </div>
 
-      <div>
-        <select name="division" id="division">
-          <option value="select-division">Select Division</option>
-          {division.map(div => {
-            return (
-              <option key={div} value={div}>
-                {div}
-              </option>
-            );
-          })}
-        </select>
+      <div className="form__container-team mt-5">
+        <div className="form__container team-container  col-5">
+          <label htmlFor="team">Team</label>
+          <select name="team" id="team" className="form__input">
+            <option value="select-team"></option>
+            {teams.map(team => {
+              return (
+                <option value="select-team" key={team} value={team}>
+                  {team}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+
+        <div className="form__container team-container col-5">
+          <label htmlFor="division">Division</label>
+          <select className="form__input" name="division">
+            <option value="select-division"></option>
+            {division.map(div => {
+              return (
+                <option key={div} value={div}>
+                  {div}
+                </option>
+              );
+            })}
+          </select>
+        </div>
       </div>
 
-      <div>
-        <select name="level" id="level">
-          <option value="select-level">Select Level</option>
+      <div className="form__container form__container-levels mt-5">
+        <h5>Level</h5>
+        <div className="levels">
           {level.map(lev => {
             return (
-              <option key={lev} value={lev}>
-                {lev}
-              </option>
+              <div className="levels__checkbox">
+                <input
+                  type="checkbox"
+                  className="form__input"
+                  value={lev}
+                  name="level"
+                />
+                <label htmlFor="level">{lev}</label>
+              </div>
             );
           })}
-        </select>
+        </div>
       </div>
 
       <select name="location" id="city">

@@ -41,10 +41,6 @@ body {
   }
 }
 
-#team {
-  background-color: orangered;
-}
-
 .profile__button-new {
   background-color: $color-primary;
 }
@@ -55,6 +51,12 @@ body {
   width: 30vw;
   height: 75vh;
   margin-left: 33.5%;
+  font-size: 1.5rem;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
 
   &__heading {
     text-align: center;
@@ -66,17 +68,8 @@ body {
   }
 
   &__first {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.5rem;
     margin-left: 10rem;
     margin-right: 5rem;
-  }
-
-  &__last {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.5rem;
   }
 
   &__input {
@@ -86,7 +79,6 @@ body {
   &__number {
     display: flex;
     flex-direction: column;
-    font-size: 1.5rem;
     margin-left: 45%;
   }
 
@@ -94,7 +86,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    &-heading {
+    .position__heading {
       text-align: center;
       font-style: oblique;
       text-decoration: underline;
@@ -103,7 +95,45 @@ body {
     &-selections {
       display: flex;
       justify-content: space-evenly;
+    }
+  }
+
+  &__height-weight {
+    display: flex;
+    margin-left: 30%;
+  }
+
+  &__born-birthplace {
+    display: flex;
+
+    .form__born {
+      margin-left: 3rem;
+      margin-right: 6.5rem;
+    }
+  }
+
+  .form__container-team {
+    display: flex;
+
+    .team-container {
+      margin: 0rem 3rem;
+      margin-right: 3.5rem;
+    }
+  }
+
+  .form__container-levels {
+    h5 {
+      text-align: center;
       font-size: 1.5rem;
+    }
+    .levels {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 0 10rem;
+
+      input {
+        margin: 0 0.5rem;
+      }
     }
   }
 }
