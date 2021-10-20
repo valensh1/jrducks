@@ -42,7 +42,7 @@ app.post('/players', async (req, res) => {
   try {
     console.log(req.body);
     await Players.create(req.body);
-    res.status(200).json(req.body);
+    res.redirect('/players');
   } catch (error) {
     console.log(error);
   }

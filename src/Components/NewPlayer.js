@@ -62,10 +62,9 @@ const NewPlayer = () => {
 
   const level = ['B', 'BB', 'A', 'AA', 'AAA'];
 
+  //? Name attribute on form items below critical for MongoDB to know what schema key/value pair it is being posted to
   return (
     <div className="form__wrapper">
-      //? Name attribute on form items below critical for MongoDB to know
-      whatschema key/value pair it is being posted to
       <form action="/players" className="form" method="POST">
         <h1 className="form__heading">NEW PLAYER</h1>
         <div className="form__name">
@@ -201,7 +200,7 @@ const NewPlayer = () => {
             <input
               type="text"
               placeholder="xx/xx/xxxx"
-              className="form__input"
+              className="form__input form__born-input"
               name="born"
             />
           </div>
@@ -212,7 +211,7 @@ const NewPlayer = () => {
             <input
               type="text"
               placeholder="City, State"
-              className="form__birthplace form__input"
+              className="form__birthplace-input form__input"
               name="birthplace"
             />
           </div>
@@ -220,7 +219,11 @@ const NewPlayer = () => {
         <div className="form__container-team mt-5">
           <div className="form__container team-container  col-4">
             <label htmlFor="team">Team</label>
-            <select name="team" id="team" className="form__input">
+            <select
+              name="team"
+              id="team"
+              className="form__input form__input-team"
+            >
               <option value="select-team"></option>
               {teams.map(team => {
                 return (
@@ -232,9 +235,15 @@ const NewPlayer = () => {
             </select>
           </div>
 
-          <div className="form__container team-container col-2">
+          <div
+            className="form__container team-container col-2"
+            id="division-container"
+          >
             <label htmlFor="division">Division</label>
-            <select className="form__input" name="division">
+            <select
+              className="form__input form__input-division"
+              name="division"
+            >
               <option value="select-division"></option>
               {division.map(div => {
                 return (
@@ -246,9 +255,15 @@ const NewPlayer = () => {
             </select>
           </div>
 
-          <div className="form__container team-container col-4">
+          <div
+            className="form__container team-container col-4"
+            id="location-container"
+          >
             <label htmlFor="location">Location</label>
-            <select className="form__input" name="location">
+            <select
+              className="form__input form__input-location"
+              name="location"
+            >
               <option value="select-location"></option>
               {cities.map(city => {
                 return (
@@ -278,6 +293,12 @@ const NewPlayer = () => {
             })}
           </div>
         </div>
+
+        <input
+          type="text"
+          className="form__input form__image col-10 mt-5"
+          placeholder="Image String"
+        />
 
         <div className="button-div mt-5">
           <button className="button" type="submit">

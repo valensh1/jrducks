@@ -111,21 +111,12 @@ const playerSchema = new mongoose.Schema({
 //? TELLING MONGOOSE YOU WANT TO CREATE A MODEL USING OUR SCHEMA
 const Player = mongoose.model('Player', playerSchema); // Player is our model name and it MUST BE SINGULAR WITH AN UPPERCASE FIRST LETTER! mongoDB will then lowercase this model name and make it plural so it will change the name to ---> players
 
-// const player1 = new Player({
-//   img: 'https://i.imgur.com/7yK4jS3.jpg',
-//   name: 'Hunter Valentine',
-//   number: 36,
-//   position: 'Goalie',
-//   height: `4'6"`,
-//   weight: 71,
-//   born: '09-06-2010',
-//   birthplace: 'Orange, CA',
-//   team: 'Jr. Ducks',
-//   division: 'PeeWee',
-//   level: 'A',
-//   location: 'Great Park',
-// });
-
-// player1.save();
+Player.findOneAndUpdate(
+  { firstName: 'Ryan' },
+  {
+    img: 'https://cms.nhl.bamgrid.com/images/headshots/current/168x168/8476434@3x.jpg',
+  },
+  { new: true }
+).then(data => console.log(data));
 
 module.exports = Player;

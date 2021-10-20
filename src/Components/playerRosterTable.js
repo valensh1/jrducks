@@ -36,6 +36,9 @@ const playerRosterTable = props => {
               <td>{player?.division}</td>
               <td>{player?.level}</td>
               <td>{player?.location}</td>
+              <td>
+                <img src={player?.img} alt="" />
+              </td>
             </tr>
           );
         })}
