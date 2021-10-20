@@ -224,11 +224,6 @@ Must have these HTML <meta> tags in your HTLM below otherwise these media querie
       width: 35%;
     }
 
-    &__input {
-      border-radius: 2%;
-      box-shadow: 5px 5px 5px orangered;
-    }
-
     &__number {
       margin-left: 37.5%;
       width: 20%;
@@ -293,6 +288,232 @@ Must have these HTML <meta> tags in your HTLM below otherwise these media querie
 
       button {
         font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .form {
+    width: 70vw;
+    margin-left: 15%;
+    margin-top: 10%;
+    font-size: 1.5rem;
+
+    &__heading {
+      font-size: 2.8rem;
+    }
+
+    &__first {
+      margin-left: 5.5rem;
+    }
+
+    &__number {
+      margin-left: 37.5%;
+      width: 20%;
+    }
+
+    .position__check {
+      &-selections {
+        flex-direction: column;
+        margin-left: 37.5%;
+      }
+    }
+
+    &__height-weight {
+      margin-left: 22%;
+    }
+
+    &__born-birthplace {
+      display: flex;
+
+      .form__born {
+        margin-left: 1rem;
+        margin-right: 10%;
+      }
+    }
+
+    .form__container-team {
+      flex-direction: column;
+
+      .form__input-team {
+        width: 200%;
+      }
+
+      .form__input-division {
+        width: 200%;
+      }
+
+      .form__input-location {
+        width: 200%;
+      }
+
+      .team-container:not(:first-child) {
+        margin-top: 2rem;
+      }
+    }
+
+    .form__container-levels {
+      h5 {
+        font-size: 1.2rem;
+      }
+      .levels {
+        margin: 0 0;
+      }
+    }
+    .form__image {
+      margin-left: 0rem;
+      width: 100%;
+    }
+
+    // Submit Button
+    .button-div {
+      height: 2.8rem;
+
+      button {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .form {
+    width: 70vw;
+    margin-left: 17.5%;
+    margin-top: 20%;
+
+    &__heading {
+      font-size: 3rem;
+    }
+
+    &__first {
+      margin-left: 10rem;
+    }
+
+    &__number {
+      margin-left: 42%;
+    }
+
+    .position__check {
+      &-selections {
+        margin-left: 42%;
+      }
+    }
+
+    &__height-weight {
+      margin-left: 30%;
+    }
+
+    &__born-birthplace {
+      .form__born {
+        margin-left: 2.5rem;
+      }
+    }
+
+    .form__container-levels {
+      h5 {
+        font-size: 1.8rem;
+      }
+    }
+    .form__image {
+      margin-left: 0rem;
+      width: 100%;
+    }
+
+    // Submit Button
+    .button-div {
+      height: 3.5rem;
+
+      button {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .form {
+    width: 60vw;
+    margin-left: 20%;
+    margin-top: 5%;
+    font-size: 2rem;
+
+    &__heading {
+      font-size: 5rem;
+    }
+
+    &__first {
+      margin-left: 25rem;
+    }
+
+    &__number {
+      margin-left: 45%;
+      width: 10%;
+    }
+
+    .position__check {
+      .position__heading {
+        font-size: 2rem;
+      }
+      &-selections {
+        display: flex;
+        flex-direction: row;
+        margin-left: 0%;
+        font-size: 2rem;
+      }
+    }
+
+    &__height-weight {
+      margin-left: 38%;
+    }
+
+    &__born-birthplace {
+      .form__born {
+        margin-left: 5rem;
+      }
+    }
+
+    .form__container-team {
+      flex-direction: row;
+
+      .form__input-team {
+        width: 100%;
+      }
+
+      .form__input-division {
+        width: 100%;
+      }
+
+      .form__input-location {
+        width: 100%;
+      }
+
+      .team-container:not(:first-child) {
+        margin-top: 0rem;
+      }
+    }
+
+    .form__container-levels {
+      h5 {
+        font-size: 2rem;
+      }
+      .levels {
+        margin: 0 0;
+      }
+    }
+
+    .form__image {
+      margin-left: 7.5rem;
+      width: 90%;
+    }
+
+    // Submit Button
+    .button-div {
+      height: 3.5rem;
+
+      button {
+        font-size: 2.5rem;
       }
     }
   }
