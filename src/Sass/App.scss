@@ -500,6 +500,14 @@ Must have these HTML <meta> tags in your HTLM below otherwise these media querie
       }
       .levels {
         margin: 0 0;
+        .levels__checkbox {
+          font-size: 2rem;
+        }
+
+        input[type='checkbox'] {
+          width: 2rem;
+          height: 2rem;
+        }
       }
     }
 

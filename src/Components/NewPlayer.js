@@ -283,7 +283,7 @@ const NewPlayer = () => {
                 <div className="levels__checkbox">
                   <input
                     type="checkbox"
-                    className="form__input"
+                    className="form__input levels-checkbox"
                     value={lev}
                     name="level"
                   />
@@ -298,6 +298,7 @@ const NewPlayer = () => {
           type="text"
           className="form__input form__image col-10 mt-5"
           placeholder="Image String"
+          name="img"
         />
 
         <div className="button-div mt-5">
