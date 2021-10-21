@@ -23,6 +23,7 @@ if (process.env.NODE_ENV !== 'development') {
 }
 
 const cors = require('cors');
+const Player = require('./Model/playersModel.js');
 app.use(cors());
 app.use(express.urlencoded({ extended: true })); // Middleware - so we can use req.body otherwise Express can't read what's in the body of our POST request. This Middleware parses data from forms in the x-www-form-urlencoded format
 app.use(express.json()); // Middleware - for parsing data coming in the body of the POST request as json format
@@ -34,6 +35,17 @@ app.get('/players', async (req, res) => {
     res.json(roster);
   } catch (error) {
     res.status(400).json(error);
+  }
+});
+
+//? GET REQUEST - SHOW PAGE (INDIVIDUAL PLAYER)
+app.get('/players/:id', async (req, res) => {
+  try {
+    const playerProfile = await Player.findById(req.params.id);
+    res.status(200).json(playerProfile);
+    console.log(playerProfile);
+  } catch (error) {
+    res.status(400).send(error);
   }
 });
 

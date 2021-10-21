@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import PlayerRoster from '../Components/playerRosterTable.js';
+import PlayerRoster from '../Components/playerRosterTable.js'; // This is the table component which includes player profile information
 
 const JrDucksPlayers = () => {
   const [players, setPlayers] = useState([]);
