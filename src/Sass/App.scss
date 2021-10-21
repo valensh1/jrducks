@@ -15,36 +15,87 @@ html {
   font-size: 62.5%; /* Everything is based upon 10px with this. 10px / 16px = .625. With this 1rem will = 10px. */
 }
 
-.profile__background {
-  margin-top: 10rem;
-  margin-left: 17%;
+//? ROSTERS STYLING
+.roster {
+  background-color: black;
   height: 100vh;
-  width: 70%;
-  background-color: white;
-  border: 3px solid orangered;
-  z-index: 1;
-}
+  width: 100vw;
 
-.profile__container {
-  position: relative;
-  background-color: white;
-  margin-left: 25%;
-  width: 50%;
-  .profile__header {
+  &__card {
+    width: 65%;
+    height: 100vh;
+    margin-left: 17.5%;
+    background-color: white;
+  }
+
+  &__header {
     color: orangered;
-    font-size: 5rem;
     text-align: center;
+    font-size: 5rem;
+    font-weight: 800;
+  }
+
+  .table__roster {
+    width: 100%;
+    font-size: 1.6rem;
+
+    tr {
+      border-bottom: 1px solid #dedede;
+    }
+
+    td {
+      padding: 5rem 1rem; // Sets the row height of the player roster table
+    }
+
+    &-headings {
+      background-color: black;
+      color: white;
+      font-size: 1.8rem;
+    }
+
+    &-number {
+      width: 5rem;
+    }
+
+    &-height {
+      width: 6rem;
+    }
+
+    &-weigth {
+      width: 5rem;
+    }
+
+    // Div that holds the img of player and the player name
+    &-data--name {
+      td {
+        margin-left: -0.5rem;
+      }
+    }
+
+    &-data--link {
+      display: flex;
+      align-items: center;
+      background-color: #ececec;
+      text-decoration: none;
+      color: black;
+
+      // Hovering over player roster name and image
+      &:hover {
+        color: orangered;
+        font-weight: 600;
+      }
+    }
+
+    img {
+      height: 65px;
+      width: 65px;
+      border-radius: 50%;
+    }
   }
 }
 
 .profile__button-new {
   background-color: $color-primary;
-}
-
-img {
-  height: 300px;
-  width: 300px;
-  border-radius: 50%;
 }
 
 //? New Player Form Styling
@@ -190,15 +241,13 @@ img {
   }
 }
 
-//? MEDIA QUERIES - FORM
+//? MEDIA QUERIES - NEW PLAYER FORM
 /*
 Must have these HTML <meta> tags in your HTLM below otherwise these media queries WILL NOT WORK!!!
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 */
-
-/* Extra small devices (phones, 400px and down) */
 
 @media only screen and (max-width: 414px) {
   .form {

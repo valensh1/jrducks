@@ -19,12 +19,12 @@ const JrDucksPlayers = () => {
   }, []);
 
   return (
-    <div className="profile__background">
-      <div className="profile__container">
-        <h1 className="profile__header">Roster</h1>
+    <div className="roster">
+      <div className="roster__card">
+        <h1 className="roster__header">Roster</h1>
         <PlayerRoster players={players} />
       </div>
-      <button type="button" className="btn btn-danger profile__button-new">
+      <button type="button" className="btn profile__button-new">
         <Link to="/players/new">New Player</Link>
       </button>
     </div>

@@ -1,48 +1,55 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const playerRosterTable = props => {
   const { players } = props; // Destructure props
   console.log(players);
 
   return (
-    <table className="table__headings">
-      <thead>
-        <tr>
-          <th className="table__headings-player">Player</th>
-          <th className="table__headings-number">#</th>
-          <th className="table__headings-position">Pos</th>
-          <th className="table__headings-height">Ht</th>
-          <th className="table__headings-weight">Wt</th>
-          <th className="table__headings-born">Born</th>
-          <th className="table__headings-birthplace">Birthplace</th>
-          <th className="table__headings-birthplace">Team</th>
-          <th className="table__headings-birthplace">Division</th>
-          <th className="table__headings-birthplace">Level</th>
-          <th className="table__headings-birthplace">Location</th>
-        </tr>
-      </thead>
-      <tbody>
-        {players?.map(player => {
-          return (
-            <tr key={player._id}>
-              <td>{player?.name}</td>
-              <td>{player?.number}</td>
-              <td>{player?.position}</td>
-              <td>{player?.height}</td>
-              <td>{player?.weight}</td>
-              <td>{player?.born}</td>
-              <td>{player?.birthplace}</td>
-              <td>{player?.team}</td>
-              <td>{player?.division}</td>
-              <td>{player?.level}</td>
-              <td>{player?.location}</td>
-              <td>
+    <table className="table__roster">
+      <tr className="table__roster-headings">
+        <th className="table__roster-player table-header">Player</th>
+        <th className="table__roster-number table-header">#</th>
+        <th className="table__roster-position table-header">Pos</th>
+        <th className="table__roster-height table-header">Ht</th>
+        <th className="table__roster-weight table-header">Wt</th>
+        <th className="table__roster-born table-header">Born</th>
+        <th className="table__roster-birthplace table-header">Birthplace</th>
+        <th className="table__roster-team table-header">Team</th>
+        <th className="table__roster-division table-header">Division</th>
+        <th className="table__roster-level table-header">Level</th>
+        <th className="table__roster-location table-header">Location</th>
+      </tr>
+
+      {players?.map(player => {
+        return (
+          <tr className="table__roster-data--row" key={player._id}>
+            <div className="table__roster-data--name">
+              <Link to={`${player._id}`} className="table__roster-data--link">
                 <img src={player?.img} alt="" />
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
+                <td>{`${player?.firstName} ${player?.lastName}`}</td>
+              </Link>
+            </div>
+
+            <td>{player?.number}</td>
+            <td>{player?.position}</td>
+            <td>
+              {player?.height
+                ? `${Number((player.height / 12).toFixed(0))}' ${
+                    player.height % 12
+                  }"`
+                : ''}
+            </td>
+            <td>{player?.weight}</td>
+            <td>{player?.born}</td>
+            <td>{player?.birthplace}</td>
+            <td>{player?.team}</td>
+            <td>{player?.division}</td>
+            <td>{player?.level}</td>
+            <td>{player?.location}</td>
+          </tr>
+        );
+      })}
     </table>
   );
 };

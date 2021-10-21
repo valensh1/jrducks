@@ -27,7 +27,7 @@ const playerSchema = new mongoose.Schema({
   },
   height: Number,
   weight: Number,
-  born: Date,
+  born: String,
   birthplace: {
     type: String,
     required: true,
