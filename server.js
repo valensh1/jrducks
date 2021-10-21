@@ -23,7 +23,6 @@ if (process.env.NODE_ENV !== 'development') {
 }
 
 const cors = require('cors');
-const Player = require('./Model/playersModel.js');
 app.use(cors());
 app.use(express.urlencoded({ extended: true })); // Middleware - so we can use req.body otherwise Express can't read what's in the body of our POST request. This Middleware parses data from forms in the x-www-form-urlencoded format
 app.use(express.json()); // Middleware - for parsing data coming in the body of the POST request as json format
