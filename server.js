@@ -26,7 +26,7 @@ db.on('open', () => {
 
 app.use(express.json());
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, './build'))); // In Terminal type in npm run build to create build folder in your application
+  app.use(express.static('../build')); // In Terminal type in npm run build to create build folder in your application
 }
 
 const cors = require('cors');
