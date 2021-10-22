@@ -20,7 +20,8 @@ db.on('open', () => {
 //? MIDDLEWARE
 app.use(express.json());
 if (process.env.NODE_ENV !== 'development') {
-  app.use(express.static('public'));
+  // app.use(express.static('public'));
+  app.use('/static', express.static(path.join(__dirname, 'build')));
 }
 
 const cors = require('cors');
@@ -69,7 +70,8 @@ app.get('/teams', async (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(path.join(__dirname, 'public', 'index.html')));
+  // res.sendFile(path.resolve(path.join(__dirname, 'public', 'index.html')));
+  res.sendFile(path.resolve(path.join(__dirname, 'build', 'index.html')));
 });
 
 app.listen(PORT, () => {
