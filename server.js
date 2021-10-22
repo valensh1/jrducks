@@ -2,8 +2,8 @@ require('dotenv').config();
 const Players = require('./Model/playersModel.js'); //!Importing players model into backend for now to serve front-end React
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 5000;
 const path = require('path');
+const PORT = process.env.PORT || 5000;
 
 const mongoose = require('mongoose');
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -20,7 +20,8 @@ db.on('open', () => {
 //? MIDDLEWARE
 app.use(express.json());
 if (process.env.NODE_ENV !== 'development') {
-  app.use(express.static('public'));
+  // app.use(express.static('public'));
+  app.use(express.static('build')); // In Terminal type in npm run build to create build folder in your application
 }
 
 const cors = require('cors');
