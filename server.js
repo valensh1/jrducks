@@ -27,7 +27,7 @@ db.on('open', () => {
 app.use(express.json());
 if (process.env.NODE_ENV === 'production') {
   // app.use(express.static('public'));
-  app.use(express.static('build'));
+  app.use(express.static(path.join(__dirname, 'build')));
 }
 
 const cors = require('cors');
@@ -75,9 +75,10 @@ app.get('/teams', async (req, res) => {
   }
 });
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   // res.sendFile(path.resolve(path.join(__dirname, 'public', 'index.html')));
-  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+  // res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(PORT, () => {
