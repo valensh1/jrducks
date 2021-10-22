@@ -2,7 +2,7 @@ require('dotenv').config();
 const Players = require('./Model/playersModel.js'); //!Importing players model into backend for now to serve front-end React
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || '5000';
+const PORT = process.env.PORT || 5000;
 const path = require('path');
 
 const mongoose = require('mongoose');
@@ -41,7 +41,7 @@ app.get('/players', async (req, res) => {
 //? GET REQUEST - SHOW PAGE (INDIVIDUAL PLAYER)
 app.get('/players/:id', async (req, res) => {
   try {
-    const playerProfile = await Player.findById(req.params.id);
+    const playerProfile = await Players.findById(req.params.id);
     res.status(200).json(playerProfile);
     console.log(playerProfile);
   } catch (error) {
